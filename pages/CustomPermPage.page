@@ -1,0 +1,20 @@
+<!-- 
+ * @author jbrock
+ * 2/14/14
+ *
+ * Demonstrate custom permissions controlling access on buttons
+ -->
+<apex:page controller="CustomPermButtons">    
+    <apex:form >
+        <apex:pageBlock title="Buttons controlled by Custom Perms">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Button 1" rendered="{!hasButton1}" action="{!pressButton1}" />
+                <apex:commandButton value="Button 2" rendered="{!hasButton2}" action="{!pressButton2}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:messages />
+                <h1><apex:outputText style="font-weight:800" value="{!buttonText}" id="outputButtonText"/></h1>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
